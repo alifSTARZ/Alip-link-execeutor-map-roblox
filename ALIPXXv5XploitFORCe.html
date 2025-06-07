@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Script Menu by AlipX</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1c1c1c;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #282828;
+      padding: 1em;
+      display: flex;
+      gap: 1em;
+    }
+    .navbar button {
+      background-color: #444;
+      border: none;
+      color: white;
+      padding: 0.5em 1em;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .container {
+      padding: 2em;
+    }
+    .menu {
+      display: none;
+    }
+    .menu.active {
+      display: block;
+    }
+    .home-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2em;
+    }
+    .home-text {
+      flex: 1 1 300px;
+    }
+    .home-image img {
+      max-width: 300px;
+      border-radius: 12px;
+    }
+    .script-box, .executor-box {
+      background-color: #333;
+      padding: 1em;
+      margin-bottom: 1em;
+      border-radius: 8px;
+    }
+    .script-title {
+      font-size: 1.2em;
+      margin-bottom: 0.5em;
+    }
+    .script-text {
+      background-color: #222;
+      padding: 0.5em;
+      border-radius: 4px;
+      color: #00ffcc;
+      cursor: pointer;
+      user-select: all;
+      word-break: break-word;
+      margin-top: 0.3em;
+    }
+    .script-text:hover {
+      background-color: #444;
+    }
+    .executor-title {
+      font-weight: bold;
+    }
+    .status {
+      font-size: 0.9em;
+      margin-left: 1em;
+    }
+    .status.on { color: limegreen; }
+    .status.off { color: red; }
+    .status.down { color: orange; }
+    .download-btn {
+      margin-top: 0.5em;
+      background-color: #007bff;
+      color: white;
+      padding: 0.4em 0.8em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <button onclick="showMenu('home')">Home</button>
+    <button onclick="showMenu('deadRails')">Script Dead Rails</button>
+    <button onclick="showMenu('growAGarden')">Script Grow A Garden</button>
+  </div>
+
+  <div class="container">
+    <!-- Home Menu -->
+    <div id="home" class="menu active">
+      <h2>Menu Home</h2>
+      <div class="home-content">
+        <div class="home-text">
+          <p>Script by AlipX</p>
+          <p>Menu Script Dead Rails</p>
+          <p>Menu Script Grow A Garden</p>
+          <button onclick="toggleExecutor()">Menu Executor</button>
+        </div>
+        <div class="home-image">
+          <a href="https://im.ge/i/vnOWU1" target="_blank">
+            <img src="https://i.im.ge/2025/05/29/vnOWU1.1000692256.png" alt="1000692256" />
+          </a>
+        </div>
+      </div>
+
+      <div id="executorMenu" style="display:none; margin-top: 1em;">
+        <h3>Daftar Executor</h3>
+        <div class="executor-box">
+          <div><span class="executor-title">Arceus</span> versi 1.7.0 <span class="status on">[ON]</span></div>
+          <a href="https://android.spdmteam.com/" target="_blank"><button class="download-btn">Download</button></a>
+        </div>
+        <div class="executor-box">
+          <div><span class="executor-title">Krnl</span> versi 2.675 <span class="status on">[ON]</span></div>
+          <a href="https://wrdcdn.net/r/54921/1748844210963/krnl_release_2.675.715_2025.6.2_29.apk" target="_blank"><button class="download-btn">Download</button></a>
+        </div>
+        <div class="executor-box">
+          <div><span class="executor-title">Codex</span> versi 2.675 <span class="status on">[ON]</span></div>
+          <a href="https://www.mediafire.com/file/cxeenktgdmhfk72/Codex_v2.675.apk/file" target="_blank"><button class="download-btn">Download</button></a>
+        </div>
+        <div class="executor-box">
+          <div><span class="executor-title">Cryptic</span> versi 2.674 <span class="status on">[ON]</span></div>
+          <a href="https://www.mediafire.com/file/v6sg6vuz1ngk6pq/Cryptic+2.674.2789+APK.apk/file" target="_blank"><button class="download-btn">Download</button></a>
+        </div>
+        <div class="executor-box">
+          <div><span class="executor-title">Vornex</span> versi 2.673 <span class="status on">[ON]</span></div>
+          <a href="https://www.mediafire.com/file/y399dq8rsycrsfz/Vornex_Android.apk/file" target="_blank"><button class="download-btn">Download</button></a>
+        </div>
+        <div class="executor-box">
+          <div><span class="executor-title">H202</span> versi 2.671 <span class="status down">[DOWN]</span></div>
+          <a href="https://mega.nz/file/uM1ATIYD#72MbVmVd--xgYRcJCfV-RBdBqCn8Vpnrwr-BjKhMEqY" target="_blank"><button class="download-btn">Download</button></a>
+        </div>
+        <div class="executor-box">
+          <div><span class="executor-title">Delta</span> versi 2.675 <span class="status on">[ON]</span></div>
+          <a href="https://www.mediafire.com/file/9mbp5xa1qn7hgeb/Delta-2.675.715+(1).apk/file" target="_blank"><button class="download-btn">Download</button></a>
+        </div>
+        <div class="executor-box">
+          <div><span class="executor-title">Fluxus</span> versi 2.673 <span class="status on">[ON]</span></div>
+          <a href="https://webfiles.pro/file/Fluxus82.apk" target="_blank"><button class="download-btn">Download</button></a>
+        </div>
+        <div class="executor-box">
+          <div><span class="executor-title">Frostware</span> versi 2.675 <span class="status off">[OFF]</span></div>
+          <a href="https://www.mediafire.com/file/ohdzdero6w3xeiu/Frostware+-+GenX+V2.apk/file" target="_blank"><button class="download-btn">Download</button></a>
+        </div>
+        <div class="executor-box">
+          <div><span class="executor-title">Ronix</span> versi 2.671 <span class="status on">[ON]</span></div>
+          <a href="https://www.mediafire.com/file/no47w2pmyh71yzg/ronix671+(1).apk/file" target="_blank"><button class="download-btn">Download</button></a>
+        </div>
+        <div class="executor-box">
+          <div><span class="executor-title">Evon</span> versi 2.674 <span class="status on">[ON]</span></div>
+          <a href="https://evon.cc/android/dl-a/Evon.apk" target="_blank"><button class="download-btn">Download</button></a>
+        </div>
+        <div class="executor-box">
+          <div><span class="executor-title">Trigon</span> versi 2.674 <span class="status on">[ON]</span></div>
+          <a href="https://www.mediafire.com/file/tb5p4tmh75u0e7x/Trigon_v2.674.apk/file" target="_blank"><button class="download-btn">Download</button></a>
+        </div>
+        <div class="executor-box">
+          <div><span class="executor-title">Vega X</span> versi 2.674 <span class="status on">[ON]</span></div>
+          <a href="https://github.com/1f0yt/community/releases/download/Vegax/Vega.X.apk" target="_blank"><button class="download-btn">Download</button></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Script Dead Rails -->
+    <div id="deadRails" class="menu">
+      <h2>Script Dead Rails</h2>
+      <div class="script-box">
+        <div class="script-title">AlipX Hub Dead Rails Keyless</div>
+        <div class="script-text" onclick="copyText(`loadstring(game:HttpGet('https://pastebin.com/raw/ZFmvxvPA'))()`)">loadstring(game:HttpGet('https://pastebin.com/raw/ZFmvxvPA'))()</div>
+      </div>
+    </div>
+
+    <!-- Menu Script Grow A Garden -->
+    <div id="growAGarden" class="menu">
+      <h2>Script Grow A Garden by AlipX</h2>
+      <div class="script-box">
+        <div class="script-title">1. Script Dupe by AlipX</div>
+        <div class="script-text" onclick="copyText(`loadstring(game:HttpGet(\"https://pastebin.com/raw/GGRNEh0J\"))()`)">loadstring(game:HttpGet("https://pastebin.com/raw/GGRNEh0J"))()</div>
+      </div>
+      <div class="script-box">
+        <div class="script-title">2. Script TP in Gear Shop No Ribet</div>
+        <div class="script-text" onclick="copyText(`loadstring(game:HttpGet(\"https://pastebin.com/raw/GvDX6y93\"))()`)">loadstring(game:HttpGet("https://pastebin.com/raw/GvDX6y93"))()</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showMenu(id) {
+      document.querySelectorAll('.menu').forEach(menu => menu.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => alert("Script berhasil disalin!"));
+    }
+
+    function toggleExecutor() {
+      const execMenu = document.getElementById('executorMenu');
+      execMenu.style.display = execMenu.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
